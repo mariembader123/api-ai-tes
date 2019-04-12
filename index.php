@@ -23,7 +23,7 @@ if($method == 'POST'){
 			break;
 		
 		default:
-			$speech = $text."Sorry, I didnt getssss that. Please ask me something else.";
+			$speech = $json."";
 			break;
 	}
 
