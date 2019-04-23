@@ -28,8 +28,9 @@ if($method == 'POST'){
 	}
 
 	$response = new \stdClass();
-	$response->text = $speech;
-	
+ $chat="success response";
+  $response.setHeader('Content-Type','application/json');
+  $response.send(JSON.stringify({"fulfillmentText":$chat}));
 	echo json_encode($response);
 }
 else
