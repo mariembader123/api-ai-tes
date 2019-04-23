@@ -28,9 +28,9 @@ if($method == 'POST'){
 	}
 
 	$response = new \stdClass();
- $chat="success response";
-  $response.setHeader('Content-Type','application/json');
-  $response.send(JSON.stringify({"fulfillmentText":$chat}));
+	$response->fulfillmentText = $speech;
+	$response->fulfillmentMessages->text->text = $speech;
+	$response->source = "webhook";
 	echo json_encode($response);
 }
 else
