@@ -7,7 +7,7 @@ if($method == 'POST'){
 	$requestBody = file_get_contents('php://input');
 	$json = json_decode($requestBody);
 
-	$text = $json->result->parameters->text;
+	$text = $json->queryResult->queryResult;
 
 	switch ($text) {
 		case 'hi':
@@ -23,7 +23,7 @@ if($method == 'POST'){
 			break;
 		
 		default:
-			$speech = ($json->result->parameters->text)."";
+			$speech = ($json->queryResult->queryResult)."";
 			break;
 	}
 
