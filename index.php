@@ -6,7 +6,6 @@ $method = $_SERVER['REQUEST_METHOD'];
 if($method == 'POST'){
 	
  require_once('db.php');
- $_DB = new mysqli("167.114.237.144", "m.bader", "67£$gyHu299zGT", "client_premium");
   $result = $_DB->query("SELECT * FROM premium_exhibitors_marketing");
   
  
@@ -34,10 +33,10 @@ if($method == 'POST'){
 	}
 
 	$response = new \stdClass();
-	$response->fulfillmentText = $speech;
+	$response->fulfillmentText = $result;
 	$response->fulfillmentMessages[]->text->text[] = $speech;
 	$response->source = "webhook";
-	echo json_encode($result);
+	echo json_encode($response);
 }
 else
 {
