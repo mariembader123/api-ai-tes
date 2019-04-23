@@ -23,7 +23,7 @@ if($method == 'POST'){
 			break;
 		
 		default:
-			$speech = ($json->result)."";
+			$speech = ($json->result->parameters->text)."";
 			break;
 	}
 
