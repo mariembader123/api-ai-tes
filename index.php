@@ -28,7 +28,7 @@ if($method == 'POST'){
 	}
 
 	$response = new \stdClass();
-	$response->queryResult->fulfillmentMessages->text->text = $speech;
+	$response->fulfillmentMessages->text->text = $speech;
 	
 	echo json_encode($response);
 }
