@@ -4,6 +4,11 @@ $method = $_SERVER['REQUEST_METHOD'];
 
 // Process only when method is POST
 if($method == 'POST'){
+	
+ require_once('db.php');
+  $result = $_DB->query("SELECT * FROM premium_exhibitors_marketing");
+  
+ 
 	$requestBody = file_get_contents('php://input');
 	$json = json_decode($requestBody);
 
@@ -31,7 +36,7 @@ if($method == 'POST'){
 	$response->fulfillmentText = $speech;
 	$response->fulfillmentMessages[]->text->text[] = $speech;
 	$response->source = "webhook";
-	echo json_encode($response);
+	echo json_encode($result);
 }
 else
 {
